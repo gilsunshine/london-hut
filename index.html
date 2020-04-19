@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>Hut Structure</title>
-		<link rel="shortcut icon" href="favicon.png">
+		<link rel="shortcut icon" href="./assets/favicon.png">
 		<style>
 			body { margin: 0; }
 			canvas { width: 640px; height: 360px }
@@ -9,9 +9,9 @@
 	</head>
 	<body>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
-		<script src="OrbitControls.js"></script>
-		<script src="MTLLoader.js"></script>
-		<script src="OBJLoader.js"></script>
+		<script src="./assets/OrbitControls.js"></script>
+		<script src="./assets/MTLLoader.js"></script>
+		<script src="./assets/OBJLoader.js"></script>
 		<script>
 		let scene = new THREE.Scene
 		viewSize = 900;
@@ -62,14 +62,14 @@
 			} else {
 
 				let mtlLoader = new THREE.MTLLoader();
-				mtlLoader.setTexturePath('/assets/');
-				mtlLoader.setPath('/assets/');
+				mtlLoader.setTexturePath('./assets/');
+				mtlLoader.setPath('./assets/');
 				mtlLoader.load(count.toString() + '.mtl', function(materials){
 				materials.preload();
 
 					let objLoader = new THREE.OBJLoader();
 					objLoader.setMaterials(materials);
-					objLoader.setPath('/assets/');
+					objLoader.setPath('./assets/');
 					objLoader.load(count.toString() + '.obj', function(object){
 
 						scene.add(object);
