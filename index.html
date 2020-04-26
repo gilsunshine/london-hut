@@ -62,7 +62,7 @@
 			shackObjLoader.setMaterials(materials);
 			shackObjLoader.setPath('');
 			shackObjLoader.load('shackleton.obj', function(object){
-				object.material.transparency = true;
+				object.material[0].transparency = true;
 				scene.add(object);
 
 			})
