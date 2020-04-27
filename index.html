@@ -56,9 +56,9 @@
 		shackLoader.setTexturePath('');
 		shackLoader.setPath('');
 		shackLoader.load('shackleton.mtl', function(materials){
-			console.log(materials)
 		materials.side = 2;
 		materials.transparent = true;
+		console.log(materials)
 		materials.preload();
 
 			let shackObjLoader = new THREE.OBJLoader();
