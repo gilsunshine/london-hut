@@ -56,14 +56,10 @@
 		shackLoader.setTexturePath('');
 		shackLoader.setPath('');
 		shackLoader.load('shackleton.mtl', function(materials){
-			materials.preload();
-
-			var texture = new THREE.TextureLoader().load( 'shackleton-01.png' );
-			var material = new THREE.MeshBasicMaterial( { map: texture, transparency: true } );
-
+		materials.preload();
 
 			let shackObjLoader = new THREE.OBJLoader();
-			shackObjLoader.setMaterials(material);
+			shackObjLoader.setMaterials(materials);
 			shackObjLoader.setPath('');
 			shackObjLoader.load('shackleton.obj', function(object){
 				scene.add(object);
