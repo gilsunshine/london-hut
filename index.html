@@ -57,15 +57,14 @@
 		shackLoader.setPath('');
 		shackLoader.load('shackleton.mtl', function(materials){
 			console.log(materials)
-		materials.side = 2;
-		materials.transparent = true;
+		materials[0].side = 2;
+		materials[0].transparent = true;
 		materials.preload();
 
 			let shackObjLoader = new THREE.OBJLoader();
 			shackObjLoader.setMaterials(materials);
 			shackObjLoader.setPath('');
 			shackObjLoader.load('shackleton.obj', function(object){
-				console.log(object);
 				scene.add(object);
 			})
 		})
