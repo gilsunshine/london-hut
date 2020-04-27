@@ -51,20 +51,22 @@
 		scene.add(fillLight);
 		scene.add(backLight);
 
-
 		let shackLoader = new THREE.MTLLoader();
 		shackLoader.setTexturePath('');
 		shackLoader.setPath('');
 		shackLoader.load('shackleton.mtl', function(materials){
 		materials.side = 2;
 		materials.transparent = true;
-		console.log(materials.materials)
 		materials.preload();
 
 			let shackObjLoader = new THREE.OBJLoader();
 			shackObjLoader.setMaterials(materials);
 			shackObjLoader.setPath('');
 			shackObjLoader.load('shackleton.obj', function(object){
+				let shack = object.children[0]
+			 shack.material.transparent = true;
+			 shack.material.depthTest = false;
+			 shack.material.side = THREE.DoubleSide;
 				scene.add(object);
 			})
 		})
